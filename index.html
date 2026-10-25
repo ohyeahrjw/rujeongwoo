@@ -2085,7 +2085,7 @@
       opacity: 0; pointer-events: none; transform: scale(1.03); overflow: hidden;
       transition: opacity .35s ease, transform .45s cubic-bezier(.16,1,.3,1); }
     .call-screen.on { opacity: 1; pointer-events: auto; transform: none; }
-/* พื้นหลังสายของNanas: สีชมพู (คนอื่นใช้พื้นหลังเดิม) */
+/* พื้นหลังสายของเจ้าหญิง: สีชมพู (คนอื่นใช้พื้นหลังเดิม) */
 .call-screen.pink { background: radial-gradient(120% 75% at 50% 0%, #ff9fc6 0%, #e0709b 48%, #8a3558 100%); }
     .call-screen .status-bar { width: 100%; color: #fff; flex-shrink: 0; }
     .call-who { margin-top: 46px; text-align: center; padding: 0 24px; flex-shrink: 0; width: 100%; box-sizing: border-box; }
@@ -2585,7 +2585,7 @@ html .lock-date { margin-top: 10px !important; }
   <div id="kakao-chat-screen" class="kakao-chat-screen">
     <div class="kakao-chat-header">
       <button class="kakao-back-btn" onclick="closeKakaoChat()">‹</button>
-      <span id="kakao-header-title">Nanas</span>
+      <span id="kakao-header-title">เจ้าหญิง</span>
       <div style="font-size: 16px;">🔍 ≡</div>
     </div>
 
@@ -2777,60 +2777,143 @@ html .lock-date { margin-top: 10px !important; }
 
   const chatDataMessages = {
     'riku_new': {
-      name: 'Nanas',
-      avatar: 'jw1.jpeg',
-      preview: 'See you there',
-      time: '23:15',
+      name: 'เจ้าหญิง',
+      avatar: 'riku-1.jpg',
+      preview: 'ถ้าใช้ได้แล้วจะติดต่อกลับทางแชทนะ',
+      time: '21:43',
       unread: true,
       messages: [
-        { type: 'incoming', text: 'Aku udah selesai' },
-        { type: 'incoming', text: 'Whatsapp kamu centang' },
-        { type: 'outgoing', text: 'Hey' },
-        { type: 'outgoing', text: 'Maaf ya, Nas' },
-        { type: 'outgoing', text: 'Kak Samu, aku suruh kesitu. Nanti ikut aja buat ketemu stylist langganan aku' },
-        { type: 'outgoing', text: 'He knows what to do' },
-        { type: 'incoming', text: 'Okee' },
-        { type: 'outgoing', text: 'See you there, cantik' },
+        { type: 'incoming', text: 'คิดถึงพี่จัง' },
+        { type: 'outgoing', text: 'เหมือนกัน' },
+        { type: 'outgoing', text: 'เน็ตไม่ดีเหรอ' },
+        { type: 'incoming', text: 'อือ' },
+        { type: 'incoming', text: 'ถ้าใช้ได้แล้วจะติดต่อกลับทางแชทนะ' }
       ]
     },
     'riku_old': {
-      name: 'Kak Samudera',
-      avatar: 'sh.jpeg',
+      name: 'ริคุ (2023)',
+      avatar: 'im-person.png',
       isDefaultAvatar: true,
-      preview: 'Nasa butuh ditemenin Omega',
-      time: '2 years ago',
+      preview: 'ใน dm',
+      time: '3 ปีที่แล้ว',
       unread: false,
       messages: [
         // --- วันที่ 2 กุมภาพันธ์ 2023 ---
-        { type: 'chat-time-divider', text: 'iMessage • June 26, 2023' },
-        { type: 'sent', text: 'Giliran penting  lu gak bisa dihubungin kak' },
-        { type: 'sent', text: 'Aelah' },
-        { type: 'received', text: 'Baru juga gue pergi ya Orion!' },
-        { type: 'received', text: 'Sabar, anj' },
-        { type: 'chat-time-divider', text: 'November 2, 2023 at 21:21' },
-        { type: 'sent', text: 'Urgent' },
-        { type: 'sent', text: 'Ke rumah gue kak' },
-        { type: 'sent', text: 'Bau alpha bikin Nasa mual parah' },
-        { type: 'sent', text: 'Nasa butuh ditemenin Omega' }
+        { type: 'chat-time-divider', text: 'iMessage • 2 กุมภาพันธ์ 2023' },
+        { type: 'sent', text: 'สวัสดีครับ เบอร์ของมาเอดะ ริคุ ใช่ไหมครับ ดูเหมือนคุณจะลืมกระเป๋าสตางค์เอาไว้ที่คาเฟ่ ถ้าคุณยังไม่ได้ไปไหนไกล ผมจะรอที่นี่จนกว่าจะ 3 ทุ่มนะครับ' },
+        { type: 'received', text: 'ใช่ครับ! ขอโทษที่ต้องรบกวนนะครับ จะรีบไปเดี๋ยวนี้เลย กรุณารอสักครู่นะครับ ขอบคุณครับ!' },
+        { type: 'chat-time-divider', text: '2 กุมภาพันธ์ 2023 21:21 น.' },
+        { type: 'received', text: 'ขอบคุณนะครับ ㅜㅜ ถ้าไม่ได้คุณชิอน ผมคงแย่แน่' },
+        { type: 'sent', text: 'ไม่เป็นไรครับ' },
+        { type: 'sent', text: 'เรื่องเล็กน้อย' },
+        { type: 'received', text: 'นอกจากหน้าตาดีแล้วก็ยังใจดีด้วยนะครับเนี่ย ㅎㅎㅎ' },
+        { type: 'sent', text: 'อ่า' },
+        { type: 'sent', text: 'ขอบคุณครับ' },
+        { type: 'sent', text: 'คุณก็หน้าตาดีครับ' },
+        { type: 'received', text: 'โอ้~' },
+        { type: 'received', text: 'ผมเรียกว่าพี่ชิอนได้ไหมครับ' },
+        { type: 'sent', text: 'ตามสบายครับ' },
+        { type: 'received', text: 'เรียกผมว่าริคุเฉย ๆ ก็ได้นะครับ ㅋㅋ' },
+        { type: 'sent', text: 'ครับ ㅋ' },
+        { type: 'sent', text: 'พูดแบบสบาย ๆ ได้ไหมครับ' },
+        { type: 'received', text: 'ได้สิครับ พี่~' },
+        { type: 'sent', text: 'ริคุมาเที่ยวเหรอ?' },
+        { type: 'received', text: 'ครับ~' },
+        { type: 'received', text: 'อยากมานานแล้วน่ะ' },
+        { type: 'sent', text: 'แล้วมาคนเดียวเหรอ' },
+        { type: 'received', text: 'ใช่ครับ ㅜㅜ ก็เลยมึน ๆ แบบนี้' },
+        { type: 'sent', text: 'แย่เลย' },
+        { type: 'sent', text: 'แต่ว่า' },
+        { type: 'sent', text: 'เก่งเกาหลีดีนะ' },
+        { type: 'received', text: 'ชอบน่ะครับ' },
+        { type: 'received', text: 'ชอบเกาหลี ก็เลยพอจะสื่อสารได้' },
+        { type: 'received', text: 'พี่สาวผมเองก็ชอบ' },
+        { type: 'received', text: 'พี่แท้ ๆ น่ะครับ' },
+        { type: 'received', text: 'ชอบดูแจฮยอน NCT' },
+        { type: 'received', text: 'ㅋㅋㅋㅋㅋㅋ' },
+        { type: 'sent', text: 'งั้นเหรอ~' },
+        { type: 'received', text: 'จะว่าไป พี่ก็หน้าคล้ายคุณแจฮยอนอยู่นะ??' },
+        { type: 'sent', text: 'หือ' },
+        { type: 'sent', text: 'แล้วริคุชอบหรือเปล่าล่ะ' },
+        { type: 'received', text: 'คุณแจฮยอน' },
+        { type: 'received', text: 'หรือ' },
+        { type: 'received', text: 'พี่ล่ะครับ' },
+        { type: 'received', text: 'ㅋ' },
+        { type: 'sent', text: 'อ่า แจฮยอนสิ' },
+        { type: 'received', text: 'ก็ชอบนะครับ' },
+        { type: 'received', text: 'แต่ว่าถ้าจะพูดถึงหน้าแบบที่ผมชอบ' },
+        { type: 'received', text: 'พี่ชิอนใกล้เคียงกว่านะ' },
+        { type: 'sent', text: 'อืม?' },
+        { type: 'received', text: 'ㅋㅋㅋㅋㅋㅋ' },
+        { type: 'received', text: 'ขออินสตาได้ไหมครับ' },
+        { type: 'sent', text: 'เอาสิ' },
+        { type: 'sent', text: 'si0n___5' },
+        { type: 'received', text: 'โหหหหหหหห' },
+        { type: 'received', text: 'พี่เป็นคนดังเหรอ' },
+        { type: 'received', text: 'ก็ว่าละ หน้าตาดีขนาดนั้น' },
+        { type: 'sent', text: 'ไม่หรอก ㅎㅎ' },
+        { type: 'sent', text: 'แค่บังเอิญขึ้นฟีดบ่อยล่ะมั้ง' },
+        { type: 'received', text: 'ดีจัง' },
+        { type: 'sent', text: 'ดีอะไร?' },
+        { type: 'received', text: 'ที่ได้รู้จักพี่?' },
+        { type: 'sent', text: 'เพราะพี่ดังเหรอ? ㅋㅋ' },
+        { type: 'received', text: 'เพราะพี่ดูใจดี' },
+        { type: 'received', text: 'แล้วก็' },
+        { type: 'received', text: 'หล่อ' },
+        { type: 'sent', text: 'อืม?' },
+        { type: 'sent', text: 'ริคุ พี่ถามได้ไหม' },
+        { type: 'received', text: 'ครับ~' },
+        { type: 'sent', text: 'ริคุชอบผู้ชายเหรอ?' },
+        { type: 'sent', text: 'หรือแค่เฟรนลี่เฉย ๆ' },
+        { type: 'received', text: 'โอ้~' },
+        { type: 'sent', text: 'ถ้าละลาบละล้วงไปก็ขอโทษนะ' },
+        { type: 'received', text: 'ชอบครับ' },
+        { type: 'received', text: 'พี่สะดวกใจจะคุยต่อหรือเปล่า' },
+        { type: 'sent', text: 'อืม สะดวกสิ' },
+        { type: 'received', text: 'ผมอาจจะชอบพี่ขึ้นมาก็ได้นะ?' },
+        { type: 'received', text: 'ทิ้งกันตอนนี้ยังทันน้า~' },
+        { type: 'sent', text: 'แล้วถ้าพี่คว้าริคุเอาไว้ล่ะ' },
+        { type: 'received', text: 'หืม~' },
+        { type: 'received', text: 'พี่ชอบผู้ชายเหรอครับ' },
+        { type: 'sent', text: 'เป็นริคุก็ไม่แย่หรอก' },
+        { type: 'received', text: 'เหรอครับ~' },
+        { type: 'received', text: 'โอเค~' },
+
+        // --- วันที่ 5 กุมภาพันธ์ 2023 ---
+        { type: 'chat-time-divider', text: 'iMessage • 5 กุมภาพันธ์ 2023' },
+        { type: 'sent', text: 'ริคุ' },
+        { type: 'sent', text: 'กลับญี่ปุ่นเมื่อไหร่' },
+        { type: 'received', text: 'อีกสักพักเลยค้าบ~' },
+        { type: 'sent', text: 'อยู่ถึง 14 ไหม?' },
+        { type: 'sent', text: 'ว่างหรือเปล่า?' },
+        { type: 'received', text: 'ก็ว่างนะครับ' },
+        { type: 'received', text: 'จะชวนเดทเหรอ~' },
+        { type: 'sent', text: 'อืม' },
+        { type: 'sent', text: 'ไปไหม? เดทกัน?' },
+        { type: 'received', text: 'มีคนหล่อมาชวนแบบนี้ก็ไม่ปฏิเสธหรอกครับ' },
+        { type: 'sent', text: 'ㅎ' },
+        { type: 'sent', text: 'ถ้างั้นก็ไว้เจอกัน' },
+        { type: 'sent', text: 'เดี๋ยวทักไปอีกทีนะ' },
+        { type: 'sent', text: 'ใน dm' }
       ]
     }
   };
 
   const chatDataKakao = {
     'riku_kakao': {
-      name: 'Nanas',
-      avatar: 'jw3.jpeg',
-      preview: 'Aneh',
+      name: 'เจ้าหญิง',
+      avatar: 'riku-1.jpg',
+      preview: 'แปลกจัง',
       time: '21:40',
       unread: true,
       messages: [
-        { type: 'incoming', text: 'Hyung' },
-        { type: 'incoming', text: 'Kangen' },
-        { type: 'outgoing', text: 'Aku juga' },
-        { type: 'outgoing', text: 'Ini princess terlalu nempel' },
-        { type: 'incoming', text: 'Hehe' },
-        { type: 'incoming', text: 'Padahal baru ketemu ya' },
-        { type: 'incoming', text: 'Aneh' }
+        { type: 'incoming', text: 'พี่' },
+        { type: 'incoming', text: 'คิดถึงจัง' },
+        { type: 'outgoing', text: 'เหมือนกัน คิคิ' },
+        { type: 'outgoing', text: 'เจ้าหญิงติดพี่เกินไปหรือเปล่า' },
+        { type: 'incoming', text: 'อือ' },
+        { type: 'incoming', text: 'เพิ่งเจอกันไปเอง' },
+        { type: 'incoming', text: 'แปลกจัง' }
       ]
     }
   };
@@ -3449,7 +3532,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="recent-item">
                 <div class="recent-left">
                   <span class="recent-call-icon">↗</span>
-                  <span class="recent-name" style="color:var(--ios-red);">Nanas</span>
+                  <span class="recent-name" style="color:var(--ios-red);">เจ้าหญิง</span>
                 </div>
                 <div class="recent-right">
                   <span class="recent-time">เมื่อวาน</span>
@@ -3625,12 +3708,12 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="msg-search-box">🔍 Search</div>
           </div>
           
-          <!-- แชท 1: Nanas -->
+          <!-- แชท 1: เจ้าหญิง -->
 <div class="chat-item unread" id="chat-item-riku" onclick="openChatDetail('riku_new')">
-  <img class="chat-avatar" src="riku-1.jpg" alt="Nanas">
+  <img class="chat-avatar" src="riku-1.jpg" alt="เจ้าหญิง">
   <div class="chat-info">
     <div class="chat-top">
-      <span class="chat-name">Nanas</span>
+      <span class="chat-name">เจ้าหญิง</span>
       <span class="chat-time">21:43</span>
     </div>
     <div class="chat-preview">ถ้าใช้ได้แล้วจะติดต่อกลับทางแชทนะ</div>
@@ -4502,7 +4585,7 @@ function openKakaoChat(chatId) {
       <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: rgba(171, 193, 209, 0.95); border-bottom: 0.5px solid rgba(0,0,0,0.05); z-index: 10; flex-shrink: 0;">
         <!-- พอกกดปุ่มนี้ จะสั่งกลับมาแสดงหน้าลิสต์แชทเดิมทันทีโดยไม่รีโหลดและไม่จอดำ -->
         <button onclick="renderKakaoHome()" style="background: none; border: none; font-size: 18px; color: #000; cursor: pointer;">‹</button>
-        <span style="font-weight: 600; font-size: 16px;">Nanas</span>
+        <span style="font-weight: 600; font-size: 16px;">เจ้าหญิง</span>
         <span style="font-size: 16px;">🔍 ☰</span>
       </div>
 
@@ -4565,7 +4648,7 @@ function createKakaoBubbleHtml(msg) {
           <img src="riku-1.jpg" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div style="max-width: 80%; min-width: 0;">
-          <div style="font-size: 11px; color: rgba(0, 0, 0, 0.5); margin-bottom: 3px;">Nanas</div>
+          <div style="font-size: 11px; color: rgba(0, 0, 0, 0.5); margin-bottom: 3px;">เจ้าหญิง</div>
           <div style="display: flex; align-items: flex-end; gap: 4px;">
             <div style="background: #ffffff; color: #000000; padding: 8px 12px; border-radius: 2px 14px 14px 14px; font-size: 13.5px; line-height: 1.45; word-break: break-word; overflow-wrap: anywhere; box-shadow: 0 1px 2px rgba(0,0,0,0.05); box-sizing: border-box;">
               ${formattedText}
@@ -5318,7 +5401,7 @@ window.igCmClose = function (now) {
 
   const kkFmt = (y, mo, d, h, mi) => Date.UTC(y, mo - 1, d, h, mi);
   const kkChats = {
-    sion_kakao: { name: 'Nanas', av: 'riku-10.jpg', pinned: true, msgs: kakaoMessages },
+    sion_kakao: { name: 'เจ้าหญิง', av: 'riku-10.jpg', pinned: true, msgs: kakaoMessages },
     siyeon: { name: 'ชียอน', av: 'coco-1.jpg', label: '3 ก.ค.', ts: kkFmt(2026, 7, 3, 22, 10), msgs: [
       { type: 'date', text: '8 มิถุนายน 2026' },
       { sender: 'them', text: 'พี่ กินข้าวหรือยัง', time: '12:30' },
@@ -6777,8 +6860,8 @@ window.igCmClose = function (now) {
     const at = (days, h, m) => { const d = new Date(); d.setDate(d.getDate() - days); d.setHours(h, m, 0, 0); return d; };
     // เจ้าหญิง (โทรออก) อยู่Recentsเสมอ: เมื่อวาน ส่วนรายการอื่นเก่ากว่า (>= 3 วันก่อน)
     const calls = [
-      { name: 'Nanas', sub: 'มือถือ', type: 'out', when: at(1, 22, 14) },
-      { name: 'Mom', sub: 'มือถือ', type: 'in', when: at(3, 18, 42) },
+      { name: 'เจ้าหญิง', sub: 'มือถือ', type: 'out', when: at(1, 22, 14) },
+      { name: 'แม่', sub: 'มือถือ', type: 'in', when: at(3, 18, 42) },
       { name: unk.num, sub: 'เกาหลีใต้', type: 'miss', when: at(unk.days, unk.h, unk.m) },
       { name: 'โอชียอน', sub: 'มือถือ', type: 'in', when: at(14, 20, 5) },
       { name: 'ยูชิ', sub: 'มือถือ', type: 'in', when: at(5, 19, 30) },
@@ -6828,7 +6911,7 @@ window.igCmClose = function (now) {
      ใคร: 'them' = อีกฝ่าย, 'me' = เรา, 'nar' = คำบรรยายเสียง, 'end' = อีกฝ่ายวางสาย
      แก้ข้อความ/เพิ่มสายของแต่ละคนได้ที่นี่ (ชื่อคีย์ = ชื่อในรายการสาย, '*' = ใช้กับทุกคนที่ไม่มีสคริปต์) */
   const CALL_SCRIPTS = {
-    'Nanas': [
+    'เจ้าหญิง': [
       [0.8, 'nar', '(รับสายแล้ว)'],
       [1.2, 'them', 'พี่~ โทรมาพอดีเลย ผมกำลังคิดถึงพี่อยู่เลย'],
       [3.2, 'me', 'คิดถึงเหมือนกัน กินข้าวหรือยัง'],
@@ -6837,7 +6920,7 @@ window.igCmClose = function (now) {
       [3.0, 'nar', '(เงียบไปครู่หนึ่ง ได้ยินเสียงลมหายใจเบา ๆ)'],
       [2.5, 'them', 'อยากเจอพี่จัง']
     ],
-    'Mom': [
+    'แม่': [
       [0.8, 'nar', '(รับสายแล้ว)'],
       [1.2, 'them', 'ว่าไงลูก กินข้าวหรือยัง'],
       [3.0, 'me', 'กินแล้วครับแม่ แม่ล่ะครับ'],
@@ -6864,7 +6947,7 @@ window.igCmClose = function (now) {
 
   /* บทสนทนาเพิ่มเติมของแต่ละคน (สุ่มรวมกับบทด้านบน ไม่ซ้ำกับสายก่อนหน้า) — เบอร์แปลก ('+') ไม่สุ่ม */
   const CALL_MORE = {
-    'Nanas': [
+    'เจ้าหญิง': [
       [
         [0.8, 'nar', '(รับสายแล้ว)'],
         [1.2, 'them', "พี่~ ผมเพิ่งเลิกเรียนเลย เหนื่อยจัง"],
@@ -6891,7 +6974,7 @@ window.igCmClose = function (now) {
         [3.0, 'them', '(หัวเราะ) ได้เลยครับ เดี๋ยวส่งรูปให้ดู']
       ]
     ],
-    'Mom': [
+    'แม่': [
       [
         [0.8, 'nar', '(รับสายแล้ว)'],
         [1.2, 'them', 'ว่าไงลูก Todayทำงานเหนื่อยไหม'],
@@ -6946,14 +7029,14 @@ window.igCmClose = function (now) {
   };
 
   /* คำลาก่อนวางสายของแต่ละบท: ให้เข้ากับเรื่องที่เพิ่งคุยกัน (null = วางสายเลยไม่มีคำลา) */
-  CALL_SCRIPTS['Nanas'].bye = 'ผมต้องวางก่อนนะครับพี่ แต่ไว้เจอกันเร็ว ๆ นี้นะ คิดถึงพี่นะ';
-  CALL_MORE['Nanas'][0].bye = 'งั้นผมรีบไปเก็บของก่อนนะครับ เจอกันที่ร้านนะพี่';
-  CALL_MORE['Nanas'][1].bye = '(เสียงงัวเงีย) ผมเริ่มง่วงแล้วครับ... พี่ฝันดีนะ ผมขอหลับก่อน';
-  CALL_MORE['Nanas'][2].bye = 'งั้นผมไปหาร้านก่อนนะครับ เดี๋ยวส่งรูปให้พี่ดู อย่าลืมว่างพรุ่งนี้นะ';
-  CALL_SCRIPTS['Mom'].bye = 'แม่ไปจัดของก่อนนะลูก ดูแลตัวเองด้วย';
-  CALL_MORE['Mom'][0].bye = 'งั้นแม่วางก่อนนะ อย่าลืมกินยาแล้วรีบพักผ่อนด้วย';
-  CALL_MORE['Mom'][1].bye = 'แม่ไปดูหม้อต้มก่อนนะ เดี๋ยวไหม้ ไว้ค่อยคุยกันใหม่';
-  CALL_MORE['Mom'][2].bye = 'แม่วางก่อนนะลูก คืนนี้นอนหลับฝันดีนะ';
+  CALL_SCRIPTS['เจ้าหญิง'].bye = 'ผมต้องวางก่อนนะครับพี่ แต่ไว้เจอกันเร็ว ๆ นี้นะ คิดถึงพี่นะ';
+  CALL_MORE['เจ้าหญิง'][0].bye = 'งั้นผมรีบไปเก็บของก่อนนะครับ เจอกันที่ร้านนะพี่';
+  CALL_MORE['เจ้าหญิง'][1].bye = '(เสียงงัวเงีย) ผมเริ่มง่วงแล้วครับ... พี่ฝันดีนะ ผมขอหลับก่อน';
+  CALL_MORE['เจ้าหญิง'][2].bye = 'งั้นผมไปหาร้านก่อนนะครับ เดี๋ยวส่งรูปให้พี่ดู อย่าลืมว่างพรุ่งนี้นะ';
+  CALL_SCRIPTS['แม่'].bye = 'แม่ไปจัดของก่อนนะลูก ดูแลตัวเองด้วย';
+  CALL_MORE['แม่'][0].bye = 'งั้นแม่วางก่อนนะ อย่าลืมกินยาแล้วรีบพักผ่อนด้วย';
+  CALL_MORE['แม่'][1].bye = 'แม่ไปดูหม้อต้มก่อนนะ เดี๋ยวไหม้ ไว้ค่อยคุยกันใหม่';
+  CALL_MORE['แม่'][2].bye = 'แม่วางก่อนนะลูก คืนนี้นอนหลับฝันดีนะ';
   CALL_SCRIPTS['*'].bye = 'งั้นขอวางสายก่อนนะ ไว้คุยกันใหม่';
   CALL_MORE['*'][0].bye = 'โอเค งั้นเจอกันแล้วค่อยคุยนะ วางก่อนนะ';
   CALL_MORE['*'][1].bye = 'โอเค งั้นเดี๋ยวทักไปนะ ไว้เจอกัน';
@@ -6975,7 +7058,7 @@ window.igCmClose = function (now) {
         [3.0, 'me', "พี่ก็คิดถึงโคโค่ เดี๋ยวพี่ดูตารางแล้วจะรีบกลับไป"],
         [3.0, 'them', "พูดแบบนี้ทุกครั้งเลย ว่างเมื่อไหร่ก็กลับมาจริง ๆ สักทีสิ"],
         [3.0, 'me', "รู้แล้วน่า รอบนี้พี่พาริคุไปด้วยก็ได้"],
-        [3.0, 'them', "จริงนะ! งั้นหนูให้Momทำของอร่อยรอเลย"]
+        [3.0, 'them', "จริงนะ! งั้นหนูให้แม่ทำของอร่อยรอเลย"]
       ],
       [
         [0.8, 'nar', "(รับสายแล้ว)"],
@@ -7082,11 +7165,11 @@ window.igCmClose = function (now) {
   /* ทักทายก่อนเข้าเรื่อง: ชิอนเป็นคนโทรออก → อีกฝ่ายรับสายแล้วทักก่อน ชิอนทักตอบ แล้วค่อยเข้าบทสนทนา
      (สายทั่วไป '*' และเบอร์แปลก '+' มีคำทักทายอยู่ในบทอยู่แล้ว จึงไม่ใส่ซ้ำ) */
   const CALL_GREET = {
-  "Nanas": [
+  "เจ้าหญิง": [
     ["ฮัลโหล~ พี่", "อือ ริคุ พี่เอง"],
     ["ฮัลโหล~ พี่ชิอนเหรอ", "อือ พี่เอง"]
   ],
-  "Mom": [
+  "แม่": [
     ["ฮัลโหล ลูกเหรอ", "ครับแม่ ผมเอง"],
     ["จ้ะ ลูก", "ครับแม่ ผมเอง"]
   ],
@@ -7127,12 +7210,12 @@ window.igCmClose = function (now) {
     excuseChance: 0.85          /* โอกาสที่จะมีบทขอโทษเมื่อครั้งก่อนไม่ได้รับสาย */
   };
   const CALL_EXCUSE = {
-    "Nanas": [
+    "เจ้าหญิง": [
       ["ริคุ เมื่อกี้พี่โทรไปไม่รับเลย อาบน้ำอยู่เหรอ", "ขอโทษนะครับพี่ เมื่อกี้ผมอาบน้ำอยู่ เลยไม่ได้ยินเสียงโทรศัพท์"],
       ["เมื่อกี้พี่โทรไปตั้งนาน ทำไมไม่รับล่ะ", "เมื่อกี้มือถืออยู่ในกระเป๋า เพิ่งเห็นว่าพี่โทรมาครับ ขอโทษนะ"],
       ["เมื่อกี้พี่โทรไปไม่ติด ไม่ว่างเหรอ", "ขอโทษนะครับพี่ เมื่อกี้ผมไม่ว่างจริง ๆ เห็นสายที่ไม่ได้รับแล้วใจหายเลย"]
     ],
-    "Mom": [
+    "แม่": [
       ["แม่ครับ เมื่อกี้ผมโทรไปไม่รับเลย แม่ไม่ว่างเหรอครับ", "โทษทีนะลูก เมื่อกี้แม่ทำกับข้าวอยู่ มือเปื้อนไปหมดเลยรับไม่ทัน"],
       ["แม่ครับ เมื่อกี้ผมโทรหาแม่ ทำไมไม่รับครับ", "เมื่อกี้แม่ไปตลาดมา ไม่ได้ยินเสียงโทรศัพท์เลย โทรมานานหรือยังลูก"],
       ["แม่ครับ เมื่อกี้โทรไปไม่เห็นรับสายเลย แม่อยู่บ้านหรือเปล่า", "แม่หาแว่นไม่เจอ เลยมองหน้าจอไม่เห็นว่าใครโทรมา ขอโทษนะลูก"]
@@ -7159,11 +7242,11 @@ window.igCmClose = function (now) {
     ]
   };
   const CALL_REPEAT = {
-    "Nanas": [
+    "เจ้าหญิง": [
       ["โทษทีนะ พี่โทรมาอีกแล้ว", "พี่~ เมื่อกี้ก็เพิ่งโทรมาไม่ใช่เหรอครับ คิดถึงผมขนาดนั้นเลยเหรอ (หัวเราะ)"],
       ["อยู่ดี ๆ ก็นึกถึงริคุ เลยโทรมาอีกรอบ", "พี่ครับ เมื่อกี้พี่ก็โทรมาแล้วนะ มีอะไรหรือเปล่าครับ"]
     ],
-    "Mom": [
+    "แม่": [
       ["แม่ครับ ผมโทรมาอีกแล้ว", "เมื่อกี้ก็เพิ่งโทรมาไม่ใช่เหรอลูก มีอะไรหรือเปล่า"],
       ["แม่ครับ ผมนึกอะไรขึ้นมาได้เลยโทรมาอีก", "Todayลูกโทรมาบ่อยจังนะ เกิดอะไรขึ้นหรือเปล่า บอกแม่ได้นะ"]
     ],
@@ -7185,11 +7268,11 @@ window.igCmClose = function (now) {
     ]
   };
   const CALL_REPEAT_HEAVY = {
-    "Nanas": [
+    "เจ้าหญิง": [
       ["พี่โทรมาบ่อยไปหน่อยใช่ไหม", "พี่... Todayโทรมาหลายรอบแล้วนะครับ ผมนับไม่ถูกแล้ว (หัวเราะ)"],
       ["ริคุ พี่ขอโทษที่โทรมาซ้ำ ๆ นะ", "ถ้าพี่โทรมาอีก ผมจะคิดว่าพี่ไม่ได้มีเรื่องอะไร แค่คิดถึงผมเฉย ๆ นะครับ"]
     ],
-    "Mom": [
+    "แม่": [
       ["แม่ครับ ผมโทรมาอีกแล้ว ขอโทษที่รบกวนนะครับ", "โอ๊ะ โทรมาอีกแล้วเหรอลูก เมื่อกี้ก็เพิ่งคุยกันไปเอง แม่ใจไม่ดีเลย มีอะไรไม่สบายใจหรือเปล่า"],
       ["แม่ครับ ผมโทรมาบ่อยไปหน่อยใช่ไหมครับ", "ลูกโทรมาหลายสายแล้วนะ แม่เริ่มห่วงแล้ว ตอบแม่ตรง ๆ นะ มีเรื่องอะไรหรือเปล่า"]
     ],
@@ -7220,22 +7303,22 @@ window.igCmClose = function (now) {
      .plain = บทเปิดที่ถือว่านี่คือสายแรก (เช่น "โทรมาพอดี", "อยู่ดี ๆ ก็โทรมา", "ฮัลโหล" ซ้ำ) → ห้ามใช้เมื่อมีบทขอโทษ/โทรซ้ำแทรกอยู่
      .hrs = [จากชั่วโมง, ถึงชั่วโมง) ใช้ได้เฉพาะช่วงเวลานั้นตามนาฬิกาเครื่อง (ข้ามเที่ยงคืนได้ เช่น [22,5])
      .t   = แท็กเรื่อง ห้ามให้บทขอโทษกับบทหลักมีแท็กเดียวกัน (กันเรื่องเดียวกันขัดกันเอง) */
-  CALL_SCRIPTS['Nanas'].plain = true;      /* "โทรมาพอดี ผมกำลังคิดถึงพี่" */
+  CALL_SCRIPTS['เจ้าหญิง'].plain = true;      /* "โทรมาพอดี ผมกำลังคิดถึงพี่" */
   CALL_SCRIPTS['โอชียอน'].plain = true;       /* "อยู่ดี ๆ ก็โทรมา มีเรื่องอะไรหรือเปล่า" (ชียอนใช้อ็อบเจ็กต์เดียวกัน) */
   CALL_SCRIPTS['แดยอง'].plain = true;         /* "พี่โทรมาพอดีเลยครับ ผมกำลังนึกถึงพี่อยู่พอดี" */
-  CALL_MORE['Mom'][2].plain = true;           /* "แม่ก็กำลังคิดถึงลูกอยู่พอดี" */
+  CALL_MORE['แม่'][2].plain = true;           /* "แม่ก็กำลังคิดถึงลูกอยู่พอดี" */
   CALL_SCRIPTS['*'].plain = true;             /* "ฮัลโหล สะดวกคุยไหม" ซ้ำ + ถาม "มีอะไรหรือเปล่า" ซ้อน */
   CALL_MORE['*'][2].plain = true;             /* "เสียงไม่ค่อยชัด" → "ตอนนี้ชัดขึ้นไหม" ถูกบทแทรกคั่นกลาง */
-  CALL_MORE['Nanas'][0].hrs = [12, 21];    /* เพิ่งเลิกเรียน */
-  CALL_MORE['Nanas'][1].hrs = [22, 5];     /* ดึกแล้ว นอนไม่หลับ ซุกผ้าห่ม */
+  CALL_MORE['เจ้าหญิง'][0].hrs = [12, 21];    /* เพิ่งเลิกเรียน */
+  CALL_MORE['เจ้าหญิง'][1].hrs = [22, 5];     /* ดึกแล้ว นอนไม่หลับ ซุกผ้าห่ม */
   CALL_MORE['ยูชิ'][0].hrs = [8, 17];         /* เข้าคลาส / กริ่งคาบถัดไป */
   CALL_MORE['โอชียอน'][1].hrs = [18, 3];      /* "Todayรีบนอนด้วย" */
-  CALL_MORE['Mom'][0].hrs = [12, 24];         /* "Todayทำงานเหนื่อยไหม" */
+  CALL_MORE['แม่'][0].hrs = [12, 24];         /* "Todayทำงานเหนื่อยไหม" */
   CALL_EXCUSE['แดยอง'][0].hrs = [9, 20];      /* ประชุมกลุ่ม */
   CALL_EXCUSE['แดยอง'][1].hrs = [9, 22];      /* ห้องสมุด */
   CALL_EXCUSE['แดยอง'][2].hrs = [6, 24];      /* รถไฟใต้ดิน */
   CALL_EXCUSE['แม่'][1].hrs = [6, 17];        /* ไปตลาด */
-  CALL_EXCUSE['Mom'][0].hrs = [5, 21];        /* ทำกับข้าวอยู่ */
+  CALL_EXCUSE['แม่'][0].hrs = [5, 21];        /* ทำกับข้าวอยู่ */
   CALL_EXCUSE['ยูชิ'][0].hrs = [6, 21];       /* รดน้ำต้นไม้ */
   CALL_EXCUSE['แดยอง'].push(["แดยอง เมื่อกี้พี่โทรไปไม่รับเลย หลับไปแล้วเหรอ", "ขอโทษครับพี่ เมื่อกี้ผมเผลอหลับไป ปิดเสียงไว้เลยไม่ได้ยินครับ"]);
   CALL_EXCUSE['แดยอง'][3].hrs = [22, 7];      /* กลางคืน: หลับ */
@@ -7243,16 +7326,16 @@ window.igCmClose = function (now) {
   CALL_SCRIPTS['ยูชิ'].t = 'water';
 
   /* ===== กันบทไม่เข้ากับเวลาเช้ามืด/ดึก (ตรวจเพิ่ม) ===== */
-  CALL_SCRIPTS['Nanas'].hrs = [7, 22];        /* กินข้าว/เพิ่งกินเสร็จ */
-  CALL_MORE['Nanas'][2].hrs = [7, 23];        /* นัดไปคาเฟ่ */
+  CALL_SCRIPTS['เจ้าหญิง'].hrs = [7, 22];        /* กินข้าว/เพิ่งกินเสร็จ */
+  CALL_MORE['เจ้าหญิง'][2].hrs = [7, 23];        /* นัดไปคาเฟ่ */
   CALL_SCRIPTS['แม่'].hrs = [7, 22];             /* กินข้าวหรือยัง */
   CALL_MORE['แม่'][1].hrs = [6, 21];             /* แม่กำลังทำกับข้าว */
   CALL_MORE['แม่'][2].hrs = [17, 24];            /* คืนนี้นอนหลับฝันดี / รีบพัก */
   CALL_SCRIPTS['โอชียอน'].hrs = [7, 24];         /* กินข้าวหรือยัง / กาแฟแทนข้าว */
   CALL_SCRIPTS['ยูชิ'].hrs = [7, 18];            /* เมฆรูปแพนเค้กที่เห็นผ่านหน้าต่าง */
-  CALL_EXCUSE['Nanas'][1].hrs = [7, 22];      /* มือถืออยู่ในกระเป๋า */
+  CALL_EXCUSE['เจ้าหญิง'][1].hrs = [7, 22];      /* มือถืออยู่ในกระเป๋า */
   /* บทใหม่: โทรไปตอนเช้ามืด (ริคุ 5–7 น. / แม่ 0–6 น.) — เติมช่องว่างที่เกิดจากการจำกัดเวลาด้านบน */
-  CALL_MORE['Nanas'].push([
+  CALL_MORE['เจ้าหญิง'].push([
     [0.8, 'nar', '(รับสายแล้ว)'],
     [1.2, 'them', '(เสียงงัวเงีย) พี่ครับ... นี่เช้ามากเลยนะ'],
     [3.2, 'me', 'ขอโทษที่ปลุก พี่แค่นึกถึงริคุขึ้นมา'],
@@ -7260,8 +7343,8 @@ window.igCmClose = function (now) {
     [3.2, 'me', 'งั้นนอนต่ออีกหน่อยก็ได้ ยังเช้าอยู่'],
     [3.0, 'them', 'ครับ... ขออีกสิบนาทีนะพี่']
   ]);
-  CALL_MORE['Nanas'][3].bye = 'ผมขอนอนต่ออีกแป๊บนะครับ ไว้ตื่นแล้วค่อยคุยกันนะพี่';
-  CALL_MORE['Nanas'][3].hrs = [5, 7];
+  CALL_MORE['เจ้าหญิง'][3].bye = 'ผมขอนอนต่ออีกแป๊บนะครับ ไว้ตื่นแล้วค่อยคุยกันนะพี่';
+  CALL_MORE['เจ้าหญิง'][3].hrs = [5, 7];
   CALL_MORE['แม่'].push([
     [0.8, 'nar', '(รับสายแล้ว)'],
     [1.2, 'them', '(เสียงงัวเงีย) ลูก... นี่มันเวลาไหนแล้วเนี่ย แม่ตกใจหมด'],
@@ -7274,7 +7357,7 @@ window.igCmClose = function (now) {
   CALL_MORE['แม่'][3].hrs = [0, 6];
 
   /* ชิอนตอบหลังอีกฝ่ายถาม/ขอโทษ (กันไม่ให้ them พูดสองบรรทัดติดโดยไม่มีใครตอบ) — ใช้ข้อความที่มีคำแปลอยู่แล้ว */
-  const CALL_WHY = { 'แม่': 'ไม่มีอะไรครับแม่ แค่คิดถึงเลยโทรมา', 'Nanas': 'ไม่มีอะไร แค่คิดถึงเลยโทรมา', '*': 'ไม่มีอะไรหรอก แค่โทรมาทักทาย' };
+  const CALL_WHY = { 'แม่': 'ไม่มีอะไรครับแม่ แค่คิดถึงเลยโทรมา', 'เจ้าหญิง': 'ไม่มีอะไร แค่คิดถึงเลยโทรมา', '*': 'ไม่มีอะไรหรอก แค่โทรมาทักทาย' };
   const CALL_ACK = { 'แม่': 'ไม่เป็นไรครับแม่', '*': 'ไม่เป็นไร' };
 
   const callHour = () => new Date().getHours();
@@ -7379,7 +7462,7 @@ window.igCmClose = function (now) {
     }
     let el = document.getElementById('call-screen');
     if (!el) { el = document.createElement('div'); el.id = 'call-screen'; document.querySelector('.phone').appendChild(el); }
-    el.className = 'call-screen ring' + (name === 'Nanas' ? ' pink' : '');
+    el.className = 'call-screen ring' + (name === 'เจ้าหญิง' ? ' pink' : '');
     el.style.removeProperty('--poster');
     if (IN_AV[name]) {   /* มีรูปผู้โทร → ใช้เป็นพื้นหลังตอนโทร/คุยสาย */
       el.classList.add('poster');
@@ -7406,7 +7489,7 @@ window.igCmClose = function (now) {
     call.el = el;
     call.coax = 0;
     /* โทรไปง้อริคุ: ต้องตอบ DM ว่าจะโทรไปง้อก่อน (rkCoax) แล้วกดโทรเองภายในเวลาที่กำหนด → ใช้บทง้อตามระดับ + ริคุรับสายเกือบแน่นอน */
-    if (!opt.incoming && name === 'Nanas' && rkCoax && Date.now() - rkCoax.t < CALL_IN.coaxWindow * 1000) { call.coax = rkCoax.lv; call.sc0 = coaxScript(rkCoax.lv); }
+    if (!opt.incoming && name === 'เจ้าหญิง' && rkCoax && Date.now() - rkCoax.t < CALL_IN.coaxWindow * 1000) { call.coax = rkCoax.lv; call.sc0 = coaxScript(rkCoax.lv); }
     requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('on')));
 
     if (opt.incoming) {   /* เรากดรับสายเอง: ข้ามขั้นตอนโทรออก เข้าบทสนทนาของสายเข้าเลย */
@@ -7446,7 +7529,7 @@ window.igCmClose = function (now) {
 
   /* คำลาก่อนวางสาย (อีกฝ่ายพูด) — ใส่ null = ไม่มีคำลา (วางสายเลย) */
   const CALL_BYE = {
-    'Nanas': 'ถ้างั้นผมขอวางสายก่อนนะครับพี่ ไว้คุยกันใหม่นะ',
+    'เจ้าหญิง': 'ถ้างั้นผมขอวางสายก่อนนะครับพี่ ไว้คุยกันใหม่นะ',
     'แม่': 'ถ้างั้นแม่ขอวางสายก่อนนะลูก ดูแลตัวเองด้วย',
     '+': null,
     '*': 'ถ้างั้นขอวางสายก่อนนะ ไว้คุยกันใหม่'
@@ -7542,15 +7625,15 @@ window.igCmClose = function (now) {
      3) ริคุโทรมาบอกคิดถึง (read): ตอนเรากำลังเปิดอ่านแชทเก่า ("ริคุ (2023)") หรือเลื่อนย้อนอ่านข้อความเก่าอยู่นาน ๆ
      บทสนทนาแก้/เพิ่มได้ที่ IN_DATA ด้านล่าง (ข้อความไทยต้องมีคำแปลใน i18n-call-incoming.js)
      ปรับความถี่ได้ที่ CALL_IN (เวลาเป็นวินาที) — ปิดทั้งหมดด้วย CALL_IN.enabled = false
-     ทดสอบเร็ว ๆ ในคอนโซล: callInTest('Nanas','read')  /  callInTest('แม่','rand') */
+     ทดสอบเร็ว ๆ ในคอนโซล: callInTest('เจ้าหญิง','read')  /  callInTest('แม่','rand') */
   const CALL_IN = {
     enabled: true,
     firstDelay: 300,                 /* ปลดล็อกแล้วรอกี่วินาทีก่อนสายสุ่มสายแรก (5 นาที) */
     gap: [1500, 2700],               /* ช่วงห่างระหว่างสายสุ่ม (25–45 นาที) */
     randMax: 1,                      /* สายสุ่มต่อคน ไม่เกินกี่ครั้งต่อการเปิดหน้าเว็บหนึ่งครั้ง */
-    randMaxBy: { 'Nanas': 999 },  /* ริคุ: ไม่จำกัดจำนวนครั้ง (รวมสายตอนอ่านแชทเก่า) — ความถี่คุมด้วย gap */
+    randMaxBy: { 'เจ้าหญิง': 999 },  /* ริคุ: ไม่จำกัดจำนวนครั้ง (รวมสายตอนอ่านแชทเก่า) — ความถี่คุมด้วย gap */
     personGap: 2400,                 /* คนเดิมห่างกันอย่างน้อยกี่วินาที (40 นาที) */
-    personGapBy: { 'Nanas': 0 },  /* ริคุไม่ต้องเว้นระยะต่อคน (ติดกัน โทรหาบ่อย) */
+    personGapBy: { 'เจ้าหญิง': 0 },  /* ริคุไม่ต้องเว้นระยะต่อคน (ติดกัน โทรหาบ่อย) */
     ringMax: 25,                     /* ดังกี่วินาทีแล้วถือว่าไม่ได้รับสาย */
     backChance: 0.7,                 /* เราโทรไปแล้ว "ไม่มีผู้รับสาย/สายไม่ว่าง" → โอกาสที่เขาโทรกลับ */
     backCancelChance: 0.35,          /* เรากดวางเองหลังสายดังเกิน 4 วิ → โอกาสที่เขาโทรกลับ */
@@ -7564,12 +7647,12 @@ window.igCmClose = function (now) {
     readDwell: [25, 55],             /* อยู่ในแชทเก่า/เลื่อนอ่านย้อนหลังนานกี่วินาที ริคุถึงจะโทรมา */
     readChance: 0.6, readCooldown: 2700,
     /* ริคุ (เจ้าหญิง) เป็นตัวหลักของเรื่อง: คนรักของชิอนที่ติดกันมาก โทรหาได้ทุกเวลา → น้ำหนัก 85% ที่เหลือแบ่งกัน 15% */
-    who: {"Nanas": [85, [0, 24]], "แม่": [4, [7, 22]], "โอชียอน": [4, [8, 24]], "แดยอง": [3, [8, 22]], "ยูชิ": [4, [8, 22]]},
+    who: {"เจ้าหญิง": [85, [0, 24]], "แม่": [4, [7, 22]], "โอชียอน": [4, [8, 24]], "แดยอง": [3, [8, 22]], "ยูชิ": [4, [8, 22]]},
     firstRikuChance: 0.92,           /* สายสุ่มสายแรกของการเปิดหน้าเว็บ: โอกาสที่เป็นริคุ (สูงกว่าปกติ) */
     rikuGuarantee: true              /* ทุก 2 สายสุ่มติดกัน ต้องมีริคุอย่างน้อย 1 สายเสมอ (ถ้าสายก่อนไม่ใช่ริคุ สายถัดไปเป็นริคุแน่นอน) */
   };
   const IN_DATA = {
- "Nanas": {
+ "เจ้าหญิง": {
   "rand": [
    {
     "hrs": [
@@ -8637,7 +8720,7 @@ window.igCmClose = function (now) {
  }
 };
   IN_DATA['ชียอน'] = IN_DATA['โอชียอน'];
-  const IN_AV = { 'Nanas': 'riku-1.jpg' };
+  const IN_AV = { 'เจ้าหญิง': 'riku-1.jpg' };
 
   const inc = { on: false, el: null, timer: null };
   const incPend = {}, incAgainAt = {};
@@ -8658,7 +8741,7 @@ window.igCmClose = function (now) {
     return pool.some(x => !incUsed.has('in:' + name + ':' + kind, all.indexOf(x)));
   };
   const incSeq = [];   /* ลำดับคนที่โทรสุ่มเข้ามา (รวมสายตอนอ่านแชทเก่า) ใช้คุมโควตาริคุ */
-  const RIKU = 'Nanas';
+  const RIKU = 'เจ้าหญิง';
   const incRandMark = name => { incSeq.push(name); incCnt[name] = (incCnt[name] || 0) + 1; incLastAt[name] = Date.now(); };
   /* บทที่เคยใช้แล้ว: จำไว้ใน sessionStorage (รีเฟรชหน้าก็ไม่เล่นบทเดิมซ้ำ) จนกว่าจะใช้ครบทุกบทถึงวนใหม่ */
   const incUsed = (() => {
@@ -8724,7 +8807,7 @@ window.igCmClose = function (now) {
     if (full) {
       const sb = document.querySelector('.status-bar');
       el.id = 'call-in';
-      el.className = 'call-screen ci-full' + (inc.name === 'Nanas' ? ' pink' : '');
+      el.className = 'call-screen ci-full' + (inc.name === 'เจ้าหญิง' ? ' pink' : '');
       el.innerHTML =
         '<div class="status-bar">' + (sb ? sb.innerHTML : '') + '</div>' +
         '<div class="call-who"><div class="call-name">' + E(inc.name) + '</div><div class="call-stat">' + E(inc.sub) + '</div></div>' +
@@ -8932,8 +9015,8 @@ window.igCmClose = function (now) {
     else if ((rd.quiet += 5) >= 10) { rd.sec = 0; rd.target = 0; rd.done = false; }
     if (reading && !rd.done && rd.sec >= rd.target && !incTyping()) {
       rd.done = true;
-      if (now > rd.cool && incRandOk('Nanas') && Math.random() < CALL_IN.readChance && incWhoOk('เจ้าหญิง') && incRing('Nanas', 'read')) {
-        incRandMark('Nanas');
+      if (now > rd.cool && incRandOk('เจ้าหญิง') && Math.random() < CALL_IN.readChance && incWhoOk('เจ้าหญิง') && incRing('เจ้าหญิง', 'read')) {
+        incRandMark('เจ้าหญิง');
         rd.cool = now + CALL_IN.readCooldown * 1000;
         incNextAt = Math.max(incNextAt, now + 120000);
         return;
@@ -8958,7 +9041,7 @@ window.igCmClose = function (now) {
     let bad = 0; for (let i = 1; i < seq.length; i++) if (seq[i] !== RIKU && seq[i - 1] !== RIKU) bad++;
     return { n: seq.length, counts: c, rikuPct: Math.round(100 * (c[RIKU] || 0) / seq.length), nonRikuPairs: bad, first: seq[0] };
   };
-  window.callInTest = function (name, kind) { return incRing(name || 'Nanas', kind || 'rand'); };
+  window.callInTest = function (name, kind) { return incRing(name || 'เจ้าหญิง', kind || 'rand'); };
 
   /* =============== ROUTER =============== */
   const _openApp = window.openApp;
@@ -9118,7 +9201,7 @@ window.igCmClose = function (now) {
       start: 'a1',
       nodes: {
         a1: { choices: [   // รอบ 1
-          { text: 'Nanas', next: 'b1', replies: [
+          { text: 'เจ้าหญิง', next: 'b1', replies: [
             { msgs: ['มีอะไรเหรอ ทำไมติดต่อทางนี้ล่ะ'] } ] },
           { text: 'ริคุ', next: 'b2', replies: [
             { msgs: ['?', 'อะไรเหรอพี่ชิอน'] } ] },
@@ -9126,7 +9209,7 @@ window.igCmClose = function (now) {
             { msgs: ['?', 'ครับ?', 'พี่เป็นอะไรเนี่ย'] } ] }
         ] },
 
-        b1: { choices: [   // รอบ 2 — หลัง "Nanas" (ริคุถามว่าทำไมทักทางนี้ → เหลือ 2 ช้อยส์ที่ตอบคำถามนั้น)
+        b1: { choices: [   // รอบ 2 — หลัง "เจ้าหญิง" (ริคุถามว่าทำไมทักทางนี้ → เหลือ 2 ช้อยส์ที่ตอบคำถามนั้น)
           { text: 'ก็แค่อยากทักทางนี้ดูบ้าง', next: 'c1', replies: [
             { msgs: ['ปกติก็คุยทาง Kakao ตลอดนี่นา', 'แต่ก็ดีเหมือนกัน'] } ] },
           { text: 'คิดถึงน่ะ เลยลองทักดู', next: 'c1', replies: [
@@ -9869,11 +9952,11 @@ window.igCmClose = function (now) {
   }
 
   /* =====================================================================
-     KakaoTalk — ห้อง "Nanas": โต้ตอบทางเดียว ไม่มีช้อยส์
+     KakaoTalk — ห้อง "เจ้าหญิง": โต้ตอบทางเดียว ไม่มีช้อยส์
      แตะช่องข้อความ → แป้นพิมพ์ขึ้น → แตะที่แป้น → พิมพ์ข้อความที่กำหนดไว้ให้เองทีละตัว → ส่ง → ริคุตอบ
      แก้เนื้อเรื่องที่ KK_SCRIPT ด้านล่าง: me = ข้อความที่ชิอนพิมพ์ (ใส่เป็น array = ส่งต่อเนื่องหลายข้อความ), replies = ที่ริคุตอบ
      ===================================================================== */
-  const KK_AV_SRC = 'riku-10.jpg', KK_NAME = 'Nanas', KK_KEY = 'kk_sion';
+  const KK_AV_SRC = 'riku-10.jpg', KK_NAME = 'เจ้าหญิง', KK_KEY = 'kk_sion';
   /* read: true = ริคุอยู่หน้าจออ่านทันที → ไม่ขึ้นเลข 1 ; ไม่ใส่ = ยังไม่อ่าน ขึ้น "1" จนกว่าริคุจะเริ่มตอบ */
   const KK_SCRIPT = [
     { me: 'เพราะเจ้าหญิงรักพี่มากไง', replies: ['ㅋㅋㅋ', 'ผมเอาแต่อยากอยู่กับพี่แฮะ'] },
@@ -10584,7 +10667,7 @@ window.igCmClose = function (now) {
   const _o = window.openChatDetail;
   if (typeof _o === 'function') window.openChatDetail = function () { hide(); return _o.apply(this, arguments); };
 
-  /* ---- KakaoTalk: ริคุตอบตอนเราไม่ได้อยู่ในห้อง → แบนเนอร์ลอย (แตะ = เข้าห้อง "Nanas") ---- */
+  /* ---- KakaoTalk: ริคุตอบตอนเราไม่ได้อยู่ในห้อง → แบนเนอร์ลอย (แตะ = เข้าห้อง "เจ้าหญิง") ---- */
   let kel = null, ktimer = 0;
   function kHide() { clearTimeout(ktimer); if (kel) kel.classList.remove('show'); }
   function kBuild() {
