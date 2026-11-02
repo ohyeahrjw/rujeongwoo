@@ -1,0 +1,847 @@
+.app-body:has(.wa-ios-app) {
+  overflow: hidden;
+  padding-bottom: 0;
+}
+
+.wa-ios-app {
+  --wa-ios-bg: white;
+  --wa-ios-panel: transparent;
+  --wa-ios-secondary: #98989d;
+  --wa-ios-blue: #3b8cf0;
+  --wa-ios-green: #105546;
+  --wa-ios-keyboard-height: min(280px, 42vh);
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  background: var(--wa-ios-bg);
+  color: #f5f5f7;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+}
+
+.wa-ios-app *,
+.wa-ios-app *::before,
+.wa-ios-app *::after {
+  box-sizing: border-box;
+}
+
+.wa-ios-status {
+  position: absolute;
+  inset: 5px 24px auto;
+  z-index: 8;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #1c1c1e;
+  font-size: 15px;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.phone:has(#app-screen.active) #wa-ios-app .wa-ios-status {
+  display: none;
+}
+
+.wa-ios-status > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.wa-ios-status svg {
+  width: 17px;
+  height: 13px;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.wa-ios-battery {
+  position: relative;
+  width: 23px;
+  height: 11px;
+  padding: 2px;
+  display: inline-flex;
+  border: 1.3px solid currentColor;
+  border-radius: 3px;
+}
+
+.wa-ios-battery::after {
+  position: absolute;
+  top: 3px;
+  right: -3px;
+  width: 2px;
+  height: 4px;
+  border-radius: 0 2px 2px 0;
+  background: currentColor;
+  content: "";
+}
+
+.wa-ios-battery i {
+  width: 75%;
+  border-radius: 1px;
+  background: currentColor;
+}
+
+.wa-ios-app button,
+.wa-ios-app textarea,
+.wa-ios-app input {
+  font: inherit;
+}
+
+.wa-ios-list-header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 2;
+  height: 100px;
+  padding: 48px 18px 8px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  background: white;
+}
+
+.wa-ios-list-header h1 {
+  margin: 0;
+  color: #1c1c1e;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.wa-ios-text-btn,
+.wa-ios-icon-btn {
+  width: 42px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--wa-ios-blue);
+}
+
+.wa-ios-text-btn {
+  width: 60px;
+  text-align: left;
+  font-size: 16px !important;
+}
+
+.wa-ios-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.wa-ios-icon-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.wa-ios-search {
+  position: absolute;
+  inset: 100px 0 auto;
+  height: 48px;
+  padding: 6px 18px;
+  display: flex;
+  align-items: center;
+  background: white;
+}
+
+.wa-ios-search svg {
+  position: absolute;
+  left: 30px;
+  z-index: 1;
+  width: 16px;
+  height: 16px;
+  color: var(--wa-ios-secondary);
+  pointer-events: none;
+}
+
+.wa-ios-search input {
+  width: 100%;
+  height: 34px;
+  padding: 0 12px 0 36px;
+  border: 0;
+  border-radius: 9px;
+  outline: 0;
+  background: #e3e3ec;
+  color: #f5f5f7;
+  font-size: 15px !important;
+}
+
+.wa-ios-search input::placeholder {
+  color: var(--wa-ios-secondary);
+}
+
+.wa-ios-chat-list {
+  position: absolute;
+  inset: 148px 0 96px;
+  overflow-y: auto;
+  padding-bottom: 12px;
+  background: white;
+  -webkit-overflow-scrolling: touch;
+}
+
+.wa-ios-chat-row {
+  position: relative;
+  width: 100%;
+  min-height: 76px;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 0;
+  background: white;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.wa-ios-chat-row::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 84px;
+  height: 1px;
+  background: #e5e5ea;
+  content: "";
+}
+
+.wa-ios-avatar,
+.wa-ios-header-avatar {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--wa-avatar-color, #59636b);
+  color: #fff;
+  font-weight: 600;
+}
+
+.wa-ios-avatar {
+  width: 55px;
+  height: 55px;
+  font-size: 17px;
+}
+
+.wa-ios-avatar-image,
+.wa-ios-header-avatar.wa-ios-avatar-image {
+  display: block;
+  object-fit: cover;
+}
+
+.wa-ios-avatar-image {
+  background: #e5e5ea;
+}
+
+.wa-ios-chat-copy {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* daftar chat ini */
+.wa-ios-chat-copy strong {
+  overflow: hidden;
+  color: black;
+  font-size: 17px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.wa-ios-chat-preview {
+  overflow: hidden;
+  color: rgb(63, 62, 62);
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wa-ios-preview-check {
+  color: #8696a0;
+  letter-spacing: -3px;
+}
+
+.wa-ios-preview-check.read {
+  color: #2797c5;
+}
+
+.wa-ios-preview-check.delivered {
+  color: #8696a0;
+}
+
+.wa-ios-chat-meta {
+  align-self: flex-start;
+  padding-top: 3px;
+  color: var(--wa-ios-secondary);
+  font-size: 12px;
+}
+
+.wa-ios-encryption-note,
+.wa-ios-empty {
+  margin: 0;
+  padding: 20px 10px 24px;
+  color: var(--wa-ios-secondary);
+  font-size: 11px;
+  text-align: center;
+}
+
+.wa-ios-tabs {
+  position: absolute;
+  inset: auto 14px 22px;
+  z-index: 3;
+  height: 60px;
+  padding: 6px;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 34px;
+  background: rgba(235, 239, 247, 0.62);
+  box-shadow:
+    0 8px 24px rgba(24, 35, 54, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  backdrop-filter: saturate(180%) blur(24px);
+}
+
+.phone.moving #wa-ios-app .wa-ios-tabs {
+  -webkit-backdrop-filter: saturate(180%) blur(24px) !important;
+  backdrop-filter: saturate(180%) blur(24px) !important;
+}
+
+.wa-ios-tab {
+  min-width: 0;
+  flex: 1;
+  padding: 2px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  border: 0;
+  border-radius: 24px;
+  background: transparent;
+  color: #686a72;
+}
+
+.wa-ios-tab.active {
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow:
+    0 2px 8px rgba(30, 42, 62, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  color: #17181b;
+}
+
+.wa-ios-tab svg {
+  width: 21px;
+  height: 21px;
+}
+
+.wa-ios-tab small {
+  font-size: 10px;
+}
+
+.wa-ios-chat-header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 3;
+  height: 96px;
+  padding: 48px 12px 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 0px solid #2a2a2c;
+  background: white;
+}
+
+.wa-ios-back {
+  flex: 0 0 auto;
+  padding: 4px 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  border: 0;
+  background: transparent;
+  color: var(--wa-ios-blue);
+  font-size: 15px !important;
+}
+
+.wa-ios-back svg {
+  width: 22px;
+  height: 22px;
+}
+
+.wa-ios-back span {
+  margin-left: -3px;
+}
+
+.wa-ios-header-avatar {
+  width: 42px;
+  height: 42px;
+  font-size: 14px;
+}
+
+.wa-ios-contact {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.wa-ios-contact strong {
+  overflow: hidden;
+  font-size: 16px;
+  color: black;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wa-ios-contact small {
+  overflow: hidden;
+  color: black;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wa-ios-chat-actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--wa-ios-blue);
+}
+
+.wa-ios-chat-actions button,
+.wa-ios-attach,
+.wa-ios-emoji,
+.wa-ios-send {
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.wa-ios-chat-actions svg {
+  width: 22px;
+  height: 22px;
+}
+
+.wa-ios-messages {
+  position: absolute;
+  inset: 96px 0 72px;
+  overflow-y: auto;
+  padding: 10px 12px 14px;
+  background-color: #fbfbfc;
+  background-image: url("jeongwookiss.jpeg");
+  background-size: cover;
+  background-position: center;
+  -webkit-overflow-scrolling: touch;
+  transition: bottom 0.25s ease;
+}
+
+.wa-ios-date {
+  width: max-content;
+  margin: 5px auto 15px;
+  padding: 5px 12px;
+  border-radius: 12px;
+  background: white;
+  color: black;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.wa-ios-message-row {
+  display: flex;
+  margin-top: 3px;
+}
+
+.wa-ios-message-row.first {
+  margin-top: 11px;
+}
+
+.wa-ios-message-row.incoming {
+  justify-content: flex-start;
+}
+
+.wa-ios-message-row.outgoing {
+  justify-content: flex-end;
+}
+
+.wa-ios-bubble {
+  position: relative;
+  max-width: 80%;
+  padding: 7px 12px 6px;
+  border-radius: 18px;
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.28;
+  overflow-wrap: anywhere;
+}
+
+.wa-ios-media-content {
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.wa-ios-media {
+  width: 100%;
+  max-width: min(240px, 68vw);
+  max-height: 300px;
+  display: block;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.wa-ios-media-caption {
+  padding: 6px 2px 1px;
+  display: block;
+}
+
+.wa-ios-message-row.incoming .wa-ios-bubble {
+  background: whitesmoke  ;
+}
+
+.wa-ios-message-row.outgoing .wa-ios-bubble {
+  background: #dcf8c6;
+}
+
+.wa-ios-message-row.last.incoming .wa-ios-bubble {
+  border-bottom-left-radius: 4px;
+}
+
+.wa-ios-message-row.last.outgoing .wa-ios-bubble {
+  border-bottom-right-radius: 4px;
+}
+
+.wa-ios-message-row.last.incoming .wa-ios-bubble::before,
+.wa-ios-message-row.last.outgoing .wa-ios-bubble::before {
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 14px;
+  background: inherit;
+  content: "";
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.wa-ios-message-row.last.incoming .wa-ios-bubble::before {
+  left: -6px;
+}
+
+.wa-ios-message-row.last.outgoing .wa-ios-bubble::before {
+  right: -6px;
+  clip-path: polygon(0 0, 0 100%, 100% 100%);
+}
+
+.wa-ios-sender {
+  display: block;
+  margin-bottom: 2px;
+  color: #cf9cff;
+  font-size: 14px;
+}
+
+.wa-ios-message-meta {
+  margin: 7px 0 0 10px;
+  float: right;
+  color: #98989d;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.wa-ios-message-row.outgoing .wa-ios-message-meta {
+  color: #8bc6b5;
+}
+
+.wa-ios-check {
+  margin-left: 4px;
+  letter-spacing: -3px;
+}
+
+.wa-ios-check.read {
+  color: #53bdeb;
+}
+
+.wa-ios-check.delivered {
+  color: #8a969d;
+}
+
+.wa-ios-composer {
+  position: absolute;
+  inset: auto 0 20px;
+  z-index: 5;
+  min-height: 52px;
+  padding: 6px 9px;
+  display: flex;
+  align-items: flex-end;
+  gap: 0px;
+  border-top: 1px solid rgba(255, 255, 255, 0.62);
+  background: rgba(242, 245, 250, 0.76);
+  box-shadow: 0 -4px 18px rgba(35, 45, 62, 0.08);
+  -webkit-backdrop-filter: saturate(180%) blur(22px);
+  backdrop-filter: saturate(180%) blur(22px);
+}
+
+.wa-ios-attach {
+  flex: 0 0 34px;
+  height: 36px;
+  color: var(--wa-ios-blue);
+}
+
+.wa-ios-attach svg {
+  width: 25px;
+  height: 25px;
+}
+
+.wa-ios-input-wrap {
+  min-width: 0;
+  min-height: 38px;
+  flex: 1;
+  padding: 3px 4px 3px 11px;
+  display: flex;
+  align-items: flex-end;
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  border-radius: 21px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow:
+    0 2px 8px rgba(30, 42, 62, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  backdrop-filter: saturate(180%) blur(14px);
+}
+
+.wa-ios-draft-preview {
+  width: 38px;
+  height: 32px;
+  flex: 0 0 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 7px;
+  background: rgba(195, 201, 212, 0.75);
+  color: #333740;
+  font-size: 16px;
+}
+
+.wa-ios-draft-preview[hidden] {
+  display: none !important;
+}
+
+.wa-ios-draft-media {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.wa-ios-draft-video {
+  font-size: 15px;
+}
+
+.wa-ios-input-wrap textarea {
+  min-width: 0;
+  max-height: 72px;
+  flex: 1;
+  padding: 6px 0;
+  resize: none;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #1c1c1e;
+  font-size: 16px !important;
+  line-height: 20px;
+}
+
+.wa-ios-input-wrap textarea::placeholder {
+  color: #777982;
+}
+
+.wa-ios-emoji {
+  flex: 0 0 30px;
+  height: 30px;
+  color: #70737c;
+  font-size: 23px !important;
+}
+
+.wa-ios-send {
+  flex: 0 0 36px;
+  height: 36px;
+  border-radius: 0;
+  background: transparent;
+  color: var(--wa-ios-blue);
+  cursor: pointer;
+}
+
+.wa-ios-send:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.wa-ios-send svg {
+  width: 23px;
+  height: 23px;
+  stroke-width: 2.1;
+}
+
+.wa-ios-keyboard {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 4;
+  height: var(--wa-ios-keyboard-height);
+  padding: 1px max(1px, env(safe-area-inset-left)) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.78);
+  background: rgba(225, 230, 239, 0.76);
+  box-shadow:
+    0 -8px 26px rgba(32, 43, 62, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: saturate(190%) blur(24px);
+  backdrop-filter: saturate(190%) blur(24px);
+      pointer-events: auto;
+  user-select: none;
+}
+
+.wa-ios-keyboard.is-hidden {
+  display: none;
+}
+
+.wa-ios-app.keyboard-open .wa-ios-composer {
+  bottom: var(--wa-ios-keyboard-height) !important;
+}
+
+.wa-ios-app.keyboard-open .wa-ios-messages {
+  bottom: calc(var(--wa-ios-keyboard-height) + 0px);
+}
+
+.wa-ios-keyboard-top {
+  height: 34px;
+  flex: 0 0 34px;
+  display: flex;
+  align-items: center;
+  color: #40434a;
+}
+
+.wa-ios-keyboard-top span {
+  height: 22px;
+  flex: 1;
+  border-right: 1px solid rgba(90, 96, 108, 0.18);
+}
+
+.wa-ios-keyboard-top .keyboard-chevron {
+  width: 45px;
+  color: #666b75;
+  font-size: 22px;
+  text-align: center;
+}
+
+.wa-ios-key-row {
+  min-height: 0;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.wa-ios-key-row.inset {
+  padding: 0 4%;
+}
+
+.wa-ios-key-row .wa-ios-key {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 6px;
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 1px 1px rgba(28, 34, 45, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.96);
+  color: #25272c;
+  font-size: 21px !important;
+  cursor: pointer;
+}
+
+.wa-ios-key-row .wa-ios-key.is-pressed {
+  transform: translateY(1px) scale(0.96);
+  background: #d7dce5;
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.9),
+    0 2px 8px rgba(38, 48, 65, 0.24);
+  transition:
+    transform 0.08s ease,
+    background 0.08s ease,
+    box-shadow 0.08s ease;
+}
+
+.wa-ios-key-row .function-key {
+  flex: 1.4;
+  background: rgba(195, 201, 212, 0.88);
+  box-shadow:
+    0 1px 1px rgba(28, 34, 45, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  font-size: 16px !important;
+}
+
+.wa-ios-key-row.utility {
+  flex: 0 0 40px;
+  gap: 5px;
+}
+
+.wa-ios-key-row .space-key {
+  flex: 4;
+  font-size: 12px !important;
+}
+
+.wa-ios-key-row .send-key {
+  flex: 1.6;
+  background: rgba(195, 201, 212, 0.88);
+  font-size: 13px !important;
+}
+
+.wa-ios-keyboard-home {
+  height: 19px;
+  flex: 0 0 19px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.wa-ios-keyboard-home::after {
+  width: 108px;
+  height: 4px;
+  margin: 8px auto 0;
+  display: block;
+  border-radius: 3px;
+  background: rgba(35, 38, 44, 0.72);
+  content: "";
+}
+
+.phone.moving #wa-ios-app .wa-ios-composer,
+.phone.moving #wa-ios-app .wa-ios-input-wrap,
+.phone.moving #wa-ios-app .wa-ios-keyboard {
+  -webkit-backdrop-filter: saturate(190%) blur(24px) !important;
+  backdrop-filter: saturate(190%) blur(24px) !important;
+}
+
+.phone:has(.wa-ios-app) #app-screen > .home-indicator-container .home-indicator {
+  background: #000 !important;
+}

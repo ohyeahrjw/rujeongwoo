@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, interactive-widget=overlays-content"
+    />
+    <title>Orion's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Nunito:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="whatsapp-app.css" />
+
+    <script src="js/detect-ios.js"></script>
+    <script id="ios27-icons" src="ios27-icons.js"></script>
+
+    
+    <script src="js/message-badge.js"></script>
+    
+    
+  </head>
+  <body>
+    <div class="phone">
+      <div class="dynamic-island"></div>
+
+      <!-- LOCK SCREEN -->
+      <div id="lock-screen" class="screen active">
+        <div class="torch-overlay" id="torch-overlay"></div>
+
+        <div class="status-bar">
+          <span class="clock-time">18:41</span>
+          <div class="status-right">
+            <svg
+              class="status-signal"
+              viewBox="0 0 18 12"
+              role="img"
+              aria-label="Signal"
+            >
+              <rect x="0" y="8" width="3" height="4" rx="1" />
+              <rect x="5" y="5.5" width="3" height="6.5" rx="1" />
+              <rect x="10" y="3" width="3" height="9" rx="1" />
+              <rect x="15" y="0" width="3" height="12" rx="1" />
+            </svg>
+            <img src="icon-wifi.png" alt="WiFi" class="status-icon" />
+            <span class="battery"></span>
+          </div>
+        </div>
+
+        <div class="lock-center">
+          <div class="lock-date" id="lock-date">Sat 24 Oct</div>
+          <div class="lock-time clock-time">09:41</div>
+        </div>
+
+        
+        <div class="lock-bottom">
+          <div class="lock-hint">Swipe up or tap to unlock</div>
+          <div class="lock-buttons">
+            <div class="lock-btn" id="btn-flashlight" aria-label="Flashlight">
+              <svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd">
+                <path
+                  d="M7 2.2h10a.8.8 0 0 1 .8.8v3.4c0 .5-.2.9-.5 1.2L16 8.9H8L6.7 7.6a1.7 1.7 0 0 1-.5-1.2V3a.8.8 0 0 1 .8-.8z"
+                />
+                <path
+                  d="M8.2 10.2h7.6v9.4a2.2 2.2 0 0 1-2.2 2.2h-3.2a2.2 2.2 0 0 1-2.2-2.2zM12 12.9a1 1 0 0 0-1 1v1.9a1 1 0 0 0 2 0v-1.9a1 1 0 0 0-1-1z"
+                />
+              </svg>
+            </div>
+
+            <div class="lock-btn" id="btn-camera" aria-label="Camera">
+              <svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd">
+                <path
+                  d="M9.3 4.4A1.6 1.6 0 0 1 10.6 3.7h2.8c.5 0 1 .3 1.3.7l.5.8h1.6A3.2 3.2 0 0 1 20 8.4v8.4a3.2 3.2 0 0 1-3.2 3.2H7.2A3.2 3.2 0 0 1 4 16.8V8.4a3.2 3.2 0 0 1 3.2-3.2h1.6zM12 8.7a3.9 3.9 0 1 0 0 7.8 3.9 3.9 0 0 0 0-7.8zm0 1.9a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="home-indicator-container"
+          onclick="showScreen('passcode-screen')"
+        >
+          <div class="home-indicator"></div>
+        </div>
+      </div>
+
+      <!-- GLOBAL STATUS BAR: A floating status bar appears at the top while using apps (the lock screen, passcode screen, home screen, and call screen have their own dedicated bars). -->
+      <div id="global-sb" class="status-bar gsb" aria-hidden="true">
+        <span class="clock-time">09:41</span>
+        <div class="status-right">
+          <svg
+            class="status-signal"
+            viewBox="0 0 18 12"
+            role="img"
+            aria-label="Signal"
+          >
+            <rect x="0" y="8" width="3" height="4" rx="1" />
+            <rect x="5" y="5.5" width="3" height="6.5" rx="1" />
+            <rect x="10" y="3" width="3" height="9" rx="1" />
+            <rect x="15" y="0" width="3" height="12" rx="1" />
+          </svg>
+          <img src="icon-wifi.png" alt="WiFi" class="status-icon" />
+          <span class="battery"></span>
+        </div>
+      </div>
+
+      <!-- PASSCODE SCREEN -->
+      <div id="passcode-screen" class="screen">
+        <div class="status-bar">
+          <span class="clock-time">09:41</span>
+          <div class="status-right">
+            <svg
+              class="status-signal"
+              viewBox="0 0 18 12"
+              role="img"
+              aria-label="Signal"
+            >
+              <rect x="0" y="8" width="3" height="4" rx="1" />
+              <rect x="5" y="5.5" width="3" height="6.5" rx="1" />
+              <rect x="10" y="3" width="3" height="9" rx="1" />
+              <rect x="15" y="0" width="3" height="12" rx="1" />
+            </svg>
+            <img src="icon-wifi.png" alt="WiFi" class="status-icon" />
+            <span class="battery"></span>
+          </div>
+        </div>
+
+        <div>
+          <div class="pass-title">Enter Passcode</div>
+          <div class="dots" id="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="keypad" id="keypad"></div>
+        </div>
+
+        <div class="pass-footer">
+          <button id="btn-emergency">Emergency</button>
+          <button id="btn-cancel">Cancel</button>
+        </div>
+        <div
+          class="home-indicator-container"
+          onclick="showScreen('lock-screen')"
+        >
+          <div class="home-indicator"></div>
+        </div>
+      </div>
+
+      <!-- HOME SCREEN -->
+      <div id="home-screen" class="screen">
+        <div class="home-content">
+          <div class="status-bar">
+            <span class="clock-time">09:41</span>
+            <div class="status-right">
+              <svg
+                class="status-signal"
+                viewBox="0 0 18 12"
+                role="img"
+                aria-label="Signal"
+              >
+                <rect x="0" y="8" width="3" height="4" rx="1" />
+                <rect x="5" y="5.5" width="3" height="6.5" rx="1" />
+                <rect x="10" y="3" width="3" height="9" rx="1" />
+                <rect x="15" y="0" width="3" height="12" rx="1" />
+              </svg>
+              <img src="icon-wifi.png" alt="WiFi" class="status-icon" />
+              <span class="battery"></span>
+            </div>
+          </div>
+
+          <div class="app-grid" id="app-grid"></div>
+        </div>
+
+        <div class="dock-container">
+          <div class="dock" id="dock"></div>
+        </div>
+
+        <div
+          class="home-indicator-container"
+          onclick="showScreen('lock-screen')"
+        >
+          <div class="home-indicator"></div>
+        </div>
+      </div>
+
+      <!-- APP SCREEN -->
+      <div id="app-screen" class="screen">
+        <div class="app-header" id="app-header" style="display: none"></div>
+        <div class="app-body" id="app-body"></div>
+
+        <div
+          class="home-indicator-container"
+          onclick="showScreen('home-screen')"
+        >
+          <div class="home-indicator"></div>
+        </div>
+      </div>
+
+      <!-- NOTE DETAIL SCREEN (iOS Notes Amber Theme) -->
+      <div id="note-detail-screen" class="note-detail-screen">
+        <div class="note-detail-header">
+          <button class="notes-back-btn" onclick="closeNoteDetail()">
+            ‹ Note
+          </button>
+          <span class="notes-more-btn">•••</span>
+        </div>
+
+        <div class="note-detail-body">
+          <div class="note-detail-date" id="note-detail-date">
+            Yesterday at 19:30
+          </div>
+          <div class="note-detail-title-input" id="note-detail-title">
+            Note Topic
+          </div>
+          <div class="note-detail-content" id="note-detail-content">
+            Content note...
+          </div>
+        </div>
+
+        <div
+          class="home-indicator-container"
+          onclick="showScreen('home-screen')"
+        >
+          <div class="home-indicator"></div>
+        </div>
+      </div>
+
+      <!-- CHAT DETAIL SCREEN (iOS Messages) -->
+      <div id="chat-detail-screen" class="chat-detail-screen">
+        <div class="chat-detail-header">
+          <button
+            id="msg-back-btn"
+            class="notes-back-btn"
+            style="font-size: 16px"
+            onclick="closeChatDetail()"
+          >
+            ‹ Home
+          </button>
+          <div class="chat-header-user">
+            <!-- 🌟 ganti pake div buat bungkus id="chat-header-avatar-box" msaukin  id="chat-header-avatar" ke dlmnya -->
+            <div
+              id="chat-header-avatar-box"
+              style="
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                flex-shrink: 0;
+              "
+            >
+              <img
+                id="chat-header-avatar"
+                src="jeongwoo2.jpeg"
+                alt="Avatar"
+                style="width: 100%; height: 100%; object-fit: cover"
+              />
+            </div>
+            <span id="chat-header-name" class="chat-header-name">Nasa</span>
+          </div>
+          <div style="width: 50px"></div>
+        </div>
+
+        <div class="chat-messages-area" id="chat-messages-area"></div>
+
+        <div class="chat-input-bar">
+          <div class="chat-add-btn">+</div>
+          <input
+            type="text"
+            class="chat-input-box"
+            placeholder="iMessage"
+            id="chat-input"
+          />
+          <div class="chat-send-btn">↑</div>
+        </div>
+
+        <div
+          class="home-indicator-container"
+          onclick="showScreen('home-screen')"
+        >
+          <div class="home-indicator"></div>
+        </div>
+      </div>
+
+      <!-- KAKAOTALK CHAT DETAIL SCREEN -->
+      <div id="kakao-chat-screen" class="kakao-chat-screen">
+        <div class="kakao-chat-header">
+          <button class="kakao-back-btn" onclick="closeKakaoChat()">‹</button>
+          <span id="kakao-header-title">Nanas</span>
+          <div style="font-size: 16px">🔍 ≡</div>
+        </div>
+
+        <div
+          class="chat-messages-area"
+          id="kakao-messages-area"
+          style="background: transparent"
+        ></div>
+
+        <div class="chat-input-bar">
+          <div class="chat-add-btn">+</div>
+          <input
+            type="text"
+            class="chat-input-box"
+            placeholder="Message..."
+            id="kakao-input"
+          />
+          <div
+            class="chat-send-btn"
+            style="background: var(--kakao-yellow); color: var(--kakao-brown)"
+          >
+            #
+          </div>
+        </div>
+
+        <div
+          class="home-indicator-container"
+          onclick="showScreen('home-screen')"
+        >
+          <div class="home-indicator"></div>
+        </div>
+      </div>
+
+      <!-- WHATSAPP CHAT DETAIL SCREEN -->
+       <script>
+       window.whatsappContactAvatars = {
+          nasa: "jeongwoo2.jpeg",
+          papa: "ppjean.jpeg",
+          samu: "sahi.jpeg",
+          nando: "jae.jpeg",
+       };
+        </script>
+        <script src="whatsapp-app.js"></script>
+
+      
+
+      
+      <!-- INSTAGRAM APP SCREEN -->
+      <div
+        id="instagram-screen"
+        class="screen"
+        style="
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          max-height: 100%;
+          position: absolute;
+          inset: 0;
+          background: #ffffff;
+          color: #000;
+          box-sizing: border-box;
+          overflow: hidden;
+          padding-top: 30px;
+        "
+      >
+        <div
+          style="
+            padding: 10px 16px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(14px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+            z-index: 10;
+          "
+        >
+          <button
+            onclick="showScreen('home-screen')"
+            style="
+              background: none;
+              border: none;
+              color: var(--ios-blue);
+              font-size: 16px;
+              font-weight: 500;
+              cursor: pointer;
+            "
+          >
+            ‹
+          </button>
+          <span
+            style="
+              font-size: 20px;
+              font-weight: 700;
+              font-family:
+                &quot;Nunito&quot;,
+                &quot;Instagram Sans&quot;,
+                -apple-system,
+                sans-serif;
+              letter-spacing: -0.6px;
+            "
+            >Instagram</span
+          >
+
+          <!-- person icon -->
+          <div
+            style="
+              width: 22px;
+              height: 22px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+            "
+            onclick="openIgProfile('orion')"
+          >
+            <img
+              src="ig-likes.png"
+              style="width: 100%; height: 100%; object-fit: contain"
+            />
+          </div>
+        </div>
+
+        <div style="flex: 1; overflow-y: auto" id="ig-content-area">
+          <!-- feed content will be rendered JS -->
+        </div>
+
+        <!-- single btoom navigation bar -->
+        <div
+          style="
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0 24px;
+            background: rgba(255, 255, 255, 0.92);
+            border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+          "
+        >
+          <div
+            style="width: 24px; height: 24px; cursor: pointer"
+            onclick="openIgHome()"
+          >
+            <img
+              src="ig_home.png"
+              style="width: 100%; height: 100%; object-fit: contain"
+            />
+          </div>
+          <div style="width: 24px; height: 24px; cursor: pointer">
+            <img
+              src="ig_explore.png"
+              style="width: 100%; height: 100%; object-fit: contain"
+            />
+          </div>
+          <div style="width: 24px; height: 24px; cursor: pointer">
+            <img
+              src="ig_post.png"
+              style="width: 100%; height: 100%; object-fit: contain"
+            />
+          </div>
+          <div style="width: 24px; height: 24px; cursor: pointer">
+            <img
+              src="ig_reels.png"
+              style="width: 100%; height: 100%; object-fit: contain"
+            />
+          </div>
+          <div
+            style="
+              width: 24px;
+              height: 24px;
+              border-radius: 50%;
+              overflow: hidden;
+              cursor: pointer;
+            "
+            onclick="openIgProfile('orion')"
+          >
+            <img
+              src="orion_1.jpeg"
+              style="width: 100%; height: 100%; object-fit: cover"
+            />
+          </div>
+        </div>
+
+        <!-- The Home Indicator bar closes apps (keep only this one at the very bottom).) -->
+        <div
+          class="home-indicator-container"
+          onclick="showScreen('home-screen')"
+        >
+          <div
+            class="home-indicator"
+            style="background: rgba(0, 0, 0, 0.3)"
+          ></div>
+        </div>
+      </div>
+
+      <!-- PHOTO FULLSCREEN VIEWER -->
+      <div id="photo-viewer" class="photo-viewer">
+        <div class="ios-viewer-header">
+          <button class="ios-icon-btn" onclick="closePhotoViewer()">‹</button>
+          <div class="ios-header-date-badge">
+            <span class="ios-header-date-title" id="viewer-header-date"
+              >Today</span
+            >
+            <span class="ios-header-date-sub" id="viewer-header-time"
+              >20:06 👤</span
+            >
+          </div>
+          <button class="ios-icon-btn">•••</button>
+        </div>
+
+        <div class="viewer-body">
+          <img id="viewer-img" class="viewer-img" src="" alt="Full view" />
+        </div>
+
+        <div class="ios-filmstrip-container" id="filmstrip-container"></div>
+
+        <div class="ios-viewer-bottom-bar">
+          <button class="ios-icon-btn">📤</button>
+          <div class="ios-bottom-pill">
+            <button class="ios-pill-action">♡</button>
+            <button class="ios-pill-action">ⓘ</button>
+          </div>
+          <button class="ios-icon-btn">🗑️</button>
+        </div>
+
+        <div
+          class="home-indicator-container"
+          onclick="showScreen('home-screen')"
+        >
+          <div class="home-indicator"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="main-passcode.js"></script>
+    <script src="modern-ios-layer.js"></script>
+    <script src="whatsapp-app.js"></script>
+    
+    <script src="js/interactive-chat.js"></script>
+    
+    <script src="js/sound-effects.js"></script>
+
+    
+    <script src="js/screen-fit.js"></script>
+    <script src="i18n.js"></script>
+    
+    <script src="js/kakao-close-fallback.js"></script>
+    
+    
+
+    
+    <script id="lock-notif-js" src="js/lock-notifications.js"></script>
+
+    
+
+    
+    
+    <script id="stable-screen-js" src="js/stable-screen.js"></script>
+    
+    
+    
+    <script id="kb-shift-js" src="js/keyboard-shift.js"></script>
+    <script id="global-sb-js" src="js/global-search.js"></script>
+    
+    
+    
+    <script id="lock-date-lang" src="js/lock-date-language.js"></script>
+    <!-- Cloudflare Pages Analytics -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "86166cdd92de46bd8ccf4abd0a1087d0"}'
+    ></script>
+    <!-- Cloudflare Pages Analytics -->
+  </body>
+</html>

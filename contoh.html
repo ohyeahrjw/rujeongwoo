@@ -1,0 +1,309 @@
+/* v63 — WhatsApp photo/caption sizing + iMessage-matched transparent wingtail.
+   IMPORTANT: tail geometry intentionally mirrors the final iMessage v47 wingtail.
+   Tail is shown on a single bubble or the LAST bubble in a same-sender run. */
+
+html[data-social-app="whatsapp"] .bubble{
+  isolation:isolate!important;
+  overflow:visible!important;
+}
+
+/* Keep the body of every WhatsApp bubble as a symmetric rounded rectangle.
+   Earlier bubbles in a same-sender run stay completely clean; only the final
+   bubble gets the separate wing lobe below. */
+html[data-social-app="whatsapp"] .wa-cluster-start .bubble,
+html[data-social-app="whatsapp"] .wa-cluster-mid .bubble,
+html[data-social-app="whatsapp"] .wa-cluster-end .bubble,
+html[data-social-app="whatsapp"] .wa-cluster-single .bubble{
+  border-radius:16px!important;
+}
+
+/* The media card owns the width. A long caption wraps inside the photo width. */
+html[data-social-app="whatsapp"] .bubble.media{
+  width:min(260px,78%)!important;
+  max-width:78%!important;
+  min-width:0!important;
+  box-sizing:border-box!important;
+}
+
+html[data-social-app="whatsapp"] .bubble.media .media-wrap{
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  box-sizing:border-box!important;
+}
+
+html[data-social-app="whatsapp"] .bubble.media .media-wrap>img{
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  height:auto;
+}
+
+html[data-social-app="whatsapp"] .bubble.media .media-caption{
+  width:100%!important;
+  min-width:0!important;
+  max-width:100%!important;
+  box-sizing:border-box!important;
+  white-space:pre-wrap!important;
+  overflow-wrap:anywhere!important;
+  word-break:break-word!important;
+}
+
+/* Use a real inline SVG wingtail in the live WhatsApp DOM.
+   html2canvas clones the same node, so the screenshot and the UI share one
+   renderer instead of relying on CSS clip-path support. */
+html[data-social-app="whatsapp"] .wa-cluster-start .bubble::before,
+html[data-social-app="whatsapp"] .wa-cluster-start .bubble::after,
+html[data-social-app="whatsapp"] .wa-cluster-mid .bubble::before,
+html[data-social-app="whatsapp"] .wa-cluster-mid .bubble::after,
+html[data-social-app="whatsapp"] .wa-cluster-end .bubble::before,
+html[data-social-app="whatsapp"] .wa-cluster-end .bubble::after,
+html[data-social-app="whatsapp"] .wa-cluster-single .bubble::before,
+html[data-social-app="whatsapp"] .wa-cluster-single .bubble::after{
+  display:none!important;
+  content:none!important;
+}
+
+html[data-social-app="whatsapp"] .wa-wingtail{
+  position:absolute!important;
+  bottom:-1px!important;
+  width:18px!important;
+  height:18px!important;
+  display:block!important;
+  overflow:visible!important;
+  pointer-events:none!important;
+  z-index:0!important;
+}
+
+html[data-social-app="whatsapp"] .bubble.in>.wa-wingtail{
+  left:-8px!important;
+  right:auto!important;
+  color:var(--bubble-in)!important;
+  transform:none!important;
+}
+
+html[data-social-app="whatsapp"] .bubble.out>.wa-wingtail{
+  right:-8px!important;
+  left:auto!important;
+  color:var(--bubble-out)!important;
+  transform:scaleX(-1)!important;
+}
+
+
+/* v77 — native-style WhatsApp photo/video cards.
+   Media width, caption/meta placement and forward affordance mirror the supplied reference. */
+html[data-social-app="whatsapp"] .msg-row:has(> .bubble.media){
+  align-items:center!important;
+}
+
+html[data-social-app="whatsapp"] .bubble.media{
+  width:min(72%,320px)!important;
+  max-width:min(72%,320px)!important;
+  min-width:180px!important;
+  padding:3px!important;
+  border-radius:18px!important;
+  box-sizing:border-box!important;
+  overflow:visible!important;
+}
+
+html[data-social-app="whatsapp"] .bubble.media .media-wrap{
+  position:relative!important;
+  width:100%!important;
+  max-width:none!important;
+  border-radius:15px!important;
+  overflow:hidden!important;
+  background:#111!important;
+}
+
+html[data-social-app="whatsapp"] .bubble.media.wa-media-has-caption .media-wrap{
+  border-radius:15px 15px 3px 3px!important;
+}
+
+html[data-social-app="whatsapp"] .bubble.media .media-wrap>img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:center!important;
+}
+
+/* Image-only messages keep time/read state on the photo, without a heavy pill. */
+html[data-social-app="whatsapp"] .bubble.media.wa-media-no-caption .media-meta-overlay{
+  position:absolute!important;
+  right:8px!important;
+  bottom:7px!important;
+  display:inline-flex!important;
+  align-items:flex-end!important;
+  gap:3px!important;
+  padding:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  color:#fff!important;
+  font-size:11.5px!important;
+  line-height:13px!important;
+  text-shadow:0 1px 3px rgba(0,0,0,.72)!important;
+  white-space:nowrap!important;
+}
+
+/* Caption is part of the same bubble; metadata sits on the caption baseline. */
+html[data-social-app="whatsapp"] .bubble.media.wa-media-has-caption .media-caption{
+  position:relative!important;
+  width:100%!important;
+  min-width:0!important;
+  box-sizing:border-box!important;
+  padding:7px 68px 7px 8px!important;
+  min-height:31px!important;
+  border-radius:0 0 15px 15px!important;
+  color:inherit!important;
+  font-size:15px!important;
+  line-height:20px!important;
+  white-space:pre-wrap!important;
+  overflow-wrap:anywhere!important;
+  word-break:break-word!important;
+}
+
+html[data-social-app="whatsapp"] .bubble.media.wa-media-has-caption .media-caption>.media-meta-overlay.wa-media-caption-meta{
+  position:absolute!important;
+  right:7px!important;
+  bottom:7px!important;
+  display:inline-flex!important;
+  align-items:flex-end!important;
+  gap:2px!important;
+  margin:0!important;
+  padding:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  color:var(--bubble-meta)!important;
+  font-size:11px!important;
+  line-height:12px!important;
+  text-shadow:none!important;
+  white-space:nowrap!important;
+}
+
+html[data-social-app="whatsapp"] .bubble.media.out.wa-media-has-caption .media-caption>.media-meta-overlay.wa-media-caption-meta{
+  color:var(--bubble-out-meta,var(--bubble-meta))!important;
+}
+
+/* The forward/share affordance sits outside the media card, like WhatsApp. */
+html[data-social-app="whatsapp"] .wa-media-share{
+  width:34px!important;
+  height:34px!important;
+  min-width:34px!important;
+  flex:0 0 34px!important;
+  border-radius:50%!important;
+  display:grid!important;
+  place-items:center!important;
+  align-self:center!important;
+  box-sizing:border-box!important;
+  background:rgba(70,74,78,.88)!important;
+  color:#fff!important;
+  pointer-events:none!important;
+  box-shadow:0 1px 4px rgba(0,0,0,.18)!important;
+  z-index:3!important;
+}
+html[data-social-app="whatsapp"] .msg-row.out>.wa-media-share{margin-right:8px!important}
+html[data-social-app="whatsapp"] .msg-row.in>.wa-media-share{margin-left:8px!important}
+html[data-social-app="whatsapp"] .wa-media-share svg{
+  width:19px!important;
+  height:19px!important;
+  display:block!important;
+}
+
+html[data-theme="light"][data-social-app="whatsapp"] .wa-media-share{
+  background:rgba(68,74,78,.72)!important;
+}
+
+/* Preserve sensible card proportions on narrow devices without hard-coding one phone. */
+@media(max-width:390px){
+  html[data-social-app="whatsapp"] .bubble.media{
+    width:min(74%,292px)!important;
+    max-width:min(74%,292px)!important;
+    min-width:160px!important;
+  }
+  html[data-social-app="whatsapp"] .wa-media-share{
+    width:32px!important;
+    height:32px!important;
+    min-width:32px!important;
+    flex-basis:32px!important;
+  }
+  html[data-social-app="whatsapp"] .msg-row.out>.wa-media-share{margin-right:6px!important}
+  html[data-social-app="whatsapp"] .msg-row.in>.wa-media-share{margin-left:6px!important}
+}
+
+
+/* v78 — frameless WhatsApp media.
+   Plain photos/videos are the card itself; only captioned media gets a colored
+   caption surface beneath the image. */
+html[data-social-app="whatsapp"] .bubble.media{
+  padding:0!important;
+  background:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
+
+/* Plain photo/video: no bubble-colored frame around the media. */
+html[data-social-app="whatsapp"] .bubble.media.wa-media-no-caption .media-wrap{
+  border-radius:16px!important;
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
+
+/* Captioned media joins cleanly into a caption surface below. */
+html[data-social-app="whatsapp"] .bubble.media.wa-media-has-caption .media-wrap{
+  border-radius:16px 16px 0 0!important;
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
+
+html[data-social-app="whatsapp"] .bubble.media.wa-media-has-caption .media-caption{
+  margin:0!important;
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+  border-radius:0 0 16px 16px!important;
+}
+
+html[data-social-app="whatsapp"] .bubble.media.out.wa-media-has-caption .media-caption{
+  background:var(--bubble-out)!important;
+  color:var(--bubble-out-text)!important;
+}
+html[data-social-app="whatsapp"] .bubble.media.in.wa-media-has-caption .media-caption{
+  background:var(--bubble-in)!important;
+  color:var(--bubble-in-text)!important;
+}
+
+/* Remove any inherited media-wrapper paint that could read as a border. */
+html[data-social-app="whatsapp"] .bubble.media .media-wrap,
+html[data-social-app="whatsapp"] .bubble.media .media-wrap>img{
+  box-shadow:none!important;
+  border:0!important;
+  outline:0!important;
+}
+
+
+/* v79 — plain WhatsApp media has no wingtail.
+   Captioned photo/video keeps the normal bubble tail because the caption owns
+   a real bubble-colored surface. */
+html[data-social-app="whatsapp"] .bubble.media.wa-media-no-caption > .wa-wingtail{
+  display:none!important;
+  content:none!important;
+}
+
+
+/* v136: one sender identity per consecutive incoming group run.
+   Name = first bubble, avatar = last bubble; the hidden avatar keeps the left
+   gutter so all bubbles from the same sender stay vertically aligned. */
+html[data-social-app="whatsapp"] .wa-chat-group .msg-row.wa-sender-start .group-sender-avatar,
+html[data-social-app="whatsapp"] .wa-chat-group .msg-row.wa-sender-mid .group-sender-avatar{
+  visibility:hidden!important;
+}
+html[data-social-app="whatsapp"] .wa-chat-group .msg-row.wa-sender-mid .sender-name,
+html[data-social-app="whatsapp"] .wa-chat-group .msg-row.wa-sender-end .sender-name{
+  display:none!important;
+}
